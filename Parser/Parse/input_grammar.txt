@@ -1,0 +1,29 @@
+file -> program 
+program -> program_heading semicolon muldec_m1 block DOT
+muldec_m1 -> #
+program_heading -> PROGRAM identifier
+identifier_list -> identifier_list comma identifier | identifier
+block -> variable_declaration_part procedure_and_function_declaration_part statement_part
+constant -> non_string | sign non_string
+sign -> PLUS | MINUS
+non_string -> DIGSEQ
+type_denoter -> identifier | new_type
+new_type -> new_structured_type
+new_ordinal_type -> subrange_type
+subrange_type -> constant DOTDOT constant
+new_structured_type -> structured_type
+structured_type -> array_type
+array_type -> ARRAY LBRAC index_list RBRAC OF component_type
+index_list -> index_list comma index_type | index_type
+index_type -> ordinal_type 
+ordinal_type -> new_ordinal_type
+component_type -> type_denoter 
+variable_declaration_part -> VAR variable_declaration_list semicolon | #
+variable_declaration_list -> variable_declaration_list semicolon variable_declaration | variable_declaration
+variable_declaration -> identifier_list COLON type_denoter
+procedure_and_function_declaration_part -> proc_or_func_declaration_list semicolon | #
+proc_or_func_declaration_list -> proc_or_func_declaration_list semicolon proc_or_func_declaration | proc_or_func_declaration
+proc_or_func_declaration -> procedure_declaration
+procedure_declaration -> procedure_heading semicolon muldec_m2 procedure_block
+muldec_m2 -> #
+exit
