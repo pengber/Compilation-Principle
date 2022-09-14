@@ -349,7 +349,7 @@ void NFA::printDFAFormOrder() {
 					 continue;
 				 }
 				 else {
-					 MinDFAFormOrder[i].push_back(MinDFAFormOrder[MinDFAFormOrder[i][whichCol]][(j / (charNum+1)) * (charNum+1)]);			//这里有BUG
+					 MinDFAFormOrder[i].push_back(MinDFAFormOrder[MinDFAFormOrder[i][whichCol]][(j / (charNum+1)) * (charNum+1)]);
 				 }
 			}
 		 }

@@ -14,10 +14,10 @@ a*.(a.b.b)*.b.(b|a)*
 a*(abb)*b(b|a)*
 
 测试样例：
+((a*)*|(b|a)*).c.d*
 (a*|b*).b.(b.a)*
 (a*|b*)*.a*.b*
 a.(a|c).b|b.(a.b|b.c).(b.a|c)
-((a*)*|(b|a)*).c.d*
 */
 int Node::number = 0;
 void input_by_file(string& pNotation, string filename) {
